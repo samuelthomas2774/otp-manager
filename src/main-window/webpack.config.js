@@ -35,7 +35,7 @@ module.exports = {
     },
     plugins: [
         new HTMLPlugin({
-            template: './src/main-window/index.html'
+            template: path.join(__dirname, 'index.html')
         }),
         new ExtractTextPlugin({
             filename: '[name].css',
