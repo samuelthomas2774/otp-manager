@@ -3,11 +3,19 @@ import pump from 'pump';
 import babel from 'gulp-babel';
 import webpackStream from 'webpack-stream';
 import electronPackager from 'electron-packager';
+import uglifyjs from 'uglify-es';
+import uglifyComposer from 'gulp-uglify/composer';
+import sourcemaps from 'gulp-sourcemaps';
+
+const uglify = uglifyComposer(uglifyjs, console);
 
 gulp.task('build-app', function () {
     return pump([
         gulp.src('src/app/**/*.js'),
+        sourcemaps.init(),
         babel(),
+        uglify(),
+        sourcemaps.write(),
         gulp.dest('dist/app')
     ]);
 });
