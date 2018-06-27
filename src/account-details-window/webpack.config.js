@@ -24,7 +24,7 @@ module.exports = {
             vue$: path.resolve(__dirname, '..', '..', 'node_modules', 'vue', 'dist', 'vue.esm.js')
         },
         modules: [
-            path.resolve('..', 'node_modules')
+            path.resolve('..', '..', 'node_modules')
         ]
     },
     target: 'electron-renderer',
