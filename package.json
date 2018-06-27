@@ -17,6 +17,7 @@
         "gulp": "^4.0.0",
         "gulp-babel": "^7.0.1",
         "gulp-electron-packer": "0.0.2",
+        "gulp-json-editor": "^2.4.1",
         "gulp-plumber": "^1.2.0",
         "gulp-rename": "^1.2.3",
         "gulp-sourcemaps": "^2.6.4",

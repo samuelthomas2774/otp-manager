@@ -1,3 +1,4 @@
+import path from 'path';
 import gulp from 'gulp';
 import pump from 'pump';
 import babel from 'gulp-babel';
@@ -6,6 +7,7 @@ import electronPackager from 'electron-packager';
 import uglifyjs from 'uglify-es';
 import uglifyComposer from 'gulp-uglify/composer';
 import sourcemaps from 'gulp-sourcemaps';
+import jsoneditor from 'gulp-json-editor';
 
 const uglify = uglifyComposer(uglifyjs, console);
 
@@ -59,12 +61,24 @@ gulp.task('watch-details-window', function () {
 gulp.task('build', gulp.parallel('build-app', 'build-main-window', 'build-details-window'));
 gulp.task('watch', gulp.parallel('watch-app', 'watch-main-window', 'watch-details-window'));
 
-gulp.task('package', function () {
+gulp.task('copy-package-info', function () {
+    return pump([
+        gulp.src('package.json'),
+        jsoneditor({
+            main: 'app/index.js',
+            devDependencies: undefined,
+            scripts: undefined
+        }),
+        gulp.dest('dist')
+    ]);
+})
+
+gulp.task('package', gulp.series('copy-package-info', function () {
     return electronPackager({
         dir: path.join(__dirname, 'dist'),
         platform: 'all',
-        ignore: /(src|\..*|gulpfile\.js|package-lock.json)/i
+        overwrite: true
     });
-});
+}));
 
 gulp.task('release', gulp.series('build', 'package'));
