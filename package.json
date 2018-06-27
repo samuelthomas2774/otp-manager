@@ -1,0 +1,36 @@
+{
+    "name": "otp-manager",
+    "version": "0.1.0",
+    "private": true,
+    "main": "dist/app/index.js",
+    "dependencies": {
+        "otplib": "^9.0.0"
+    },
+    "devDependencies": {
+        "babel-core": "^6.26.3",
+        "babel-preset-env": "^1.7.0",
+        "babel-preset-es2015": "^6.24.1",
+        "css-loader": "^0.28.11",
+        "electron": "^2.0.2",
+        "electron-packager": "^12.1.0",
+        "extract-text-webpack-plugin": "^3.0.2",
+        "gulp": "^4.0.0",
+        "gulp-babel": "^7.0.1",
+        "gulp-electron-packer": "0.0.2",
+        "gulp-plumber": "^1.2.0",
+        "gulp-rename": "^1.2.3",
+        "gulp-webpack": "^1.5.0",
+        "html-webpack-plugin": "^3.2.0",
+        "node-sass": "^4.9.0",
+        "pump": "^3.0.0",
+        "sass-loader": "^7.0.1",
+        "vue": "^2.5.16",
+        "vue-loader": "^13.7.1",
+        "vue-template-compiler": "^2.5.16",
+        "webpack": "^3.12.0",
+        "webpack-stream": "^4.0.3"
+    },
+    "scripts": {
+        "start": "electron ."
+    }
+}

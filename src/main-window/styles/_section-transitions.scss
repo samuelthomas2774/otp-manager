@@ -1,0 +1,27 @@
+.app-section {
+    position: absolute;
+
+    &.active-item-enter-active {
+        animation: active-item-in .5s;
+    }
+
+    &.active-item-leave-active {
+        animation: active-item-in .5s reverse;
+    }
+}
+
+@keyframes active-item-in {
+    0% {
+        transform: scale(0.8) translateX(-20px);
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1) translateX(0);
+        opacity: 1;
+    }
+}

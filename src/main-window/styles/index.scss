@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: Ubuntu, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.app-root {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+}
+
+@import 'sidebar';
+@import 'section-transitions';
+@import 'sections';
