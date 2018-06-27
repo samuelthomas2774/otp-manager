@@ -1,13 +1,12 @@
-const gulp = require('gulp');
-const pump = require('pump');
-const babel = require('gulp-babel');
-const webpackStream = require('webpack-stream');
-const electronPackager = require('electron-packager');
+import gulp from 'gulp';
+import pump from 'pump';
+import babel from 'gulp-babel';
+import webpackStream from 'webpack-stream';
+import electronPackager from 'electron-packager';
 
 gulp.task('build-app', function () {
     return pump([
         gulp.src('src/app/**/*.js'),
-        // plumber(),
         babel(),
         gulp.dest('dist/app')
     ]);
